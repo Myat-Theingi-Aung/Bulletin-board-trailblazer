@@ -1,0 +1,3 @@
+namespace :post do
+  
+end

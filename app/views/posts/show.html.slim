@@ -1,0 +1,14 @@
+= render 'share/nav'
+.container style="margin-top:80px"
+  .row 
+    .col-12.col-md-7.mx-auto
+      .card 
+        .card-body 
+          h3.txt-color = @post.title
+          p = @post.description
+          .d-flex.justify-content-end
+            a.btn.btn-primary.text-white.me-2 href="/posts" Back
+            - if current_user && @post.user_id == current_user.id
+              - if PostsLoyalty.new(current_user, @post).update?
+                => link_to "Edit",edit_post_path(@post), class: "btn btn-color text-white"
+     

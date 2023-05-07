@@ -1,0 +1,42 @@
+= render 'share/nav'
+.container style="margin-top: 80px"
+  .row
+    .col-12.col-md-6.mx-auto 
+      .card 
+        .card-body 
+          h5.txt-color Profile
+          .row 
+            .col-3
+              p Name 
+            .col-8
+              p = @user.name
+          .row 
+            .col-3
+              p Email
+            .col-8
+              p = @user.email
+          .row
+            .col-3
+              p Phone
+            .col-8
+              p = @user.phone
+          .row 
+            .col-3
+              p Address
+            .col-8
+              p = @user.address
+          .row 
+            .col-3
+              p Birthday
+            .col-8
+              p = @user.birthday
+          .row 
+            .col-3
+              p Type
+            .col-8
+              p = @user.role
+          .row 
+            .col-12.user-svg
+              == @svg
+          .d-flex.justify-content-end
+            a.btn.btn-color.text-white href="/users/#{ @user.id }/edit" Edit
